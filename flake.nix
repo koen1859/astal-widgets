@@ -28,6 +28,7 @@
       powerprofiles
       tray
       bluetooth
+      apps
     ];
   in {
     packages.${system} = {
