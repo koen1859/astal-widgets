@@ -30,14 +30,16 @@
       bluetooth
     ];
   in {
-    packages.${system}.default = ags.lib.bundle {
-      inherit pkgs;
-      name = "TopBar";
-      src = ./TopBar;
-      entry = "app.ts";
-      gtk4 = false;
+    packages.${system} = {
+      TopBar = ags.lib.bundle {
+        inherit pkgs;
+        name = "TopBar";
+        src = ./TopBar;
+        entry = "app.ts";
+        gtk4 = false;
 
-      extraPackages = agsPackages ++ [pkgs.gjs];
+        extraPackages = agsPackages ++ [pkgs.gjs];
+      };
     };
   };
 }
