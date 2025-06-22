@@ -51,7 +51,7 @@ export default function Applauncher() {
         width.set(self.get_current_monitor().workarea.width);
       }}
       onKeyPressEvent={function (self, event: Gdk.Event) {
-        if (event.get_keyval()[1] === Gdk.KEY_Escape) self.hide();
+        if (event.get_keyval()[1] === Gdk.KEY_Escape) hide();
       }}
     >
       <box>
