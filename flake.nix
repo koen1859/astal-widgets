@@ -8,9 +8,9 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     ags,
+    ...
   }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -32,29 +32,12 @@
   in {
     packages.${system}.default = ags.lib.bundle {
       inherit pkgs;
-      name = "simple-bar";
+      name = "TopBar";
       src = ./TopBar;
       entry = "app.ts";
       gtk4 = false;
 
       extraPackages = agsPackages ++ [pkgs.gjs];
-    };
-
-    # Apps for easy running
-    apps.${system} = {
-      default = {
-        type = "app";
-        program = "${self.packages.${system}.default}/bin/simple-bar";
-      };
-    };
-
-    # Overlay for using in NixOS configurations
-    overlays.default = final: prev: {
-      simple-bar = self.packages.${system}.default;
-    };
-
-    devShells.${system}.default = pkgs.mkShell {
-      packages = agsPackages ++ [pkgs.gjs];
     };
   };
 }
