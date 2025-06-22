@@ -40,6 +40,15 @@
 
         extraPackages = agsPackages ++ [pkgs.gjs];
       };
+      AppLauncher = ags.lib.bundle {
+        inherit pkgs;
+        name = "AppLauncher";
+        src = ./AppLauncher;
+        entry = "app.ts";
+        gtk4 = false;
+
+        extraPackages = agsPackages ++ [pkgs.gjs];
+      };
     };
   };
 }
