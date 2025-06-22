@@ -36,7 +36,7 @@
         inherit pkgs;
         name = "TopBar";
         src = ./TopBar;
-        entry = "app.ts";
+        entry = "TopBar.ts";
         gtk4 = false;
 
         extraPackages = agsPackages ++ [pkgs.gjs];
@@ -45,7 +45,7 @@
         inherit pkgs;
         name = "AppLauncher";
         src = ./AppLauncher;
-        entry = "app.ts";
+        entry = "AppLauncher.ts";
         gtk4 = false;
 
         extraPackages = agsPackages ++ [pkgs.gjs];
