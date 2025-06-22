@@ -33,7 +33,7 @@
     packages.${system}.default = ags.lib.bundle {
       inherit pkgs;
       name = "simple-bar";
-      src = ./.;
+      src = ./TopBar;
       entry = "app.ts";
       gtk4 = false;
 
