@@ -1,11 +1,11 @@
 import Apps from "gi://AstalApps";
 import { App, Astal, Gdk, Gtk } from "astal/gtk3";
-import { Variable } from "astal";
+import { subprocess, Variable } from "astal";
 
 const MAX_ITEMS = 8;
 
 function hide() {
-  App.get_window("launcher").close();
+  subprocess("pkill .AppLauncher-wr");
 }
 
 function AppButton({ app }: { app: Apps.Application }) {
