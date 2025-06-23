@@ -51,5 +51,8 @@
         extraPackages = agsPackages ++ [pkgs.gjs];
       };
     };
+    devShells.${system}.default = pkgs.mkShell {
+      packages = agsPackages ++ [pkgs.ags];
+    };
   };
 }
